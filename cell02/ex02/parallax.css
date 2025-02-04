@@ -1,0 +1,45 @@
+body {
+    height: 100%;
+    margin: 0px;
+}
+
+.parallax {
+    height: 100%;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+.parallax1 {
+    background-image: url("https://seeklogo.com/images/C/caution-sign-logo-FBD25C869E-seeklogo.com.png");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-items: end;
+}
+
+.parallax2 {
+    background-image: url("https://www.icegif.com/wp-content/uploads/2023/01/icegif-162.gif");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.warning {
+    height: 60%;
+    background-color: black;
+    color: red;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    
+}
+
+h1 {
+    margin: 10%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
