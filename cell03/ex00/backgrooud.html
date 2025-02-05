@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="backgrooud.css">
+    <title>c03-ex00_background</title>
+</head>
+<body>
+    <button id="gbut" onclick="randombg()" onmouseover="clearInterval(shrinkInterval)" onmouseout="shrink()">Click me!</button>
+    <script>
+        function randombg() {
+            const r = Math.floor(Math.random() * 256);
+            const g = Math.floor(Math.random() * 256);
+            const b = Math.floor(Math.random() * 256);
+            const randomColor = `rgb(${r}, ${g}, ${b})`;
+            document.body.style.backgroundColor = randomColor;
+
+            const grow = document.getElementById('gbut');
+            const currentsize = parseInt(window.getComputedStyle(grow).fontSize);
+            grow.style.fontSize = `${currentsize + 3}px`;
+        }
+
+        let shrinkInterval;
+
+        function shrink() {
+            const grow = document.getElementById('gbut');
+            shrinkInterval = setInterval(() => {
+                let currentSize = parseInt(window.getComputedStyle(grow).fontSize);
+                if (currentSize > 15) {
+                    grow.style.fontSize = `${currentSize - 1}px`;
+                }
+            }, 100);
+        }
+    </script>
+</body>
+</html>

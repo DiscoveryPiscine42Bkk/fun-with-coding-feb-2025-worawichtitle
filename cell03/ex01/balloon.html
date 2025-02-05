@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>c03-ex01_balloon</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0px;
+        }
+
+        #balloon {
+            background-color: red;
+            min-width: 200px;
+            min-height: 200px;
+            border-radius: 60%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="balloon"></div>
+    <script>
+        let balloonelem = document.getElementById('balloon');
+        let balloon = balloonelem.style;
+        let size = 200; //origin size
+        let ball_color = ['red', 'green', 'blue']; //color rotation
+        let i = 0;
+        let shrink
+
+        balloonelem.onclick = function() { //make it bigger
+            i = (i + 1) % ball_color.length;
+            balloon.backgroundColor = ball_color[i];
+            if (size + 10 <= 420){
+                size = size + 10;
+            } else {
+                size = 200;
+            }
+            balloon.width = size + 'px';
+            balloon.height = size + 'px';
+        }
+
+        balloonelem.onmouseleave = function() { //make it smaller
+            // if (size - 5 >= 200){
+            //     i = (i - 1 + ball_color.length) % ball_color.length;
+            //     balloon.backgroundColor = ball_color[i];
+            //     size = size - 5;
+            // } else {
+            //     size = 200;
+            // }
+            // balloon.width = size + 'px';
+            // balloon.height = size + 'px';
+
+            startShrink();
+        }
+
+        balloonelem.onmouseover = function() {
+            clearInterval(shrink);
+        }
+
+        //make it autosmaller
+        function startShrink() {
+            shrink = setInterval(() => {
+                if (size - 5 >= 200){
+                    i = (i - 1 + ball_color.length) % ball_color.length;
+                    balloon.backgroundColor = ball_color[i];
+                    size = size - 5;
+                } else {
+                    size = 200;
+                }
+                balloon.width = size + 'px';
+                balloon.height = size + 'px';
+            }, 250); // Adjust the interval time (in milliseconds) as needed
+        }
+
+        // Start shrinking when the page loads
+        startShrink();
+    </script>
+</body>
+</html>
