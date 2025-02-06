@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="backgrooud.css">
+    <title>c03-ex00_background</title>
+
+    <!-- Import jQuery from a CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <button id="gbut">Click me!</button>
+    <script>
+        $(document).ready(function(){
+            $("#gbut").click(function() {
+                const r = Math.floor(Math.random() * 256);
+                const g = Math.floor(Math.random() * 256);
+                const b = Math.floor(Math.random() * 256);
+                const randomColor = `rgb(${r}, ${g}, ${b})`;
+                $('body').css('background-color', randomColor);
+                
+                let $grow = $(this);
+                let currentSize = parseInt($grow.css("font-size"));
+                $grow.css("font-size", (currentSize + 3) + "px");
+            });
+
+            let shrinkInterval;
+
+            $("#gbut").mouseenter(function() {
+                clearInterval(shrinkInterval);
+            });
+
+            $("#gbut").mouseleave(function() {
+                let $grow = $(this);
+                shrinkInterval = setInterval(function() {
+                    let currentSize = parseInt($grow.css("font-size"));
+                    if (currentSize > 15) {
+                        $grow.css("font-size", (currentSize - 1) + "px");
+                    }
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>

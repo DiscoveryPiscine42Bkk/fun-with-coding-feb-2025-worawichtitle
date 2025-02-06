@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>c03-ex01_balloon</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0px;
+        }
+
+        #balloon {
+            background-color: red;
+            min-width: 200px;
+            min-height: 200px;
+            border-radius: 60%;
+            cursor: pointer;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div id="balloon"></div>
+    <script>
+        $(document).ready(function(){
+            let size = 200;
+            let ball_color = ['red', 'green', 'blue'];
+            let i = 0;
+            let shrink;
+
+            $('#balloon').click(function() {
+                i = (i + 1) % ball_color.length;
+                $(this).css('background-color', ball_color[i]);
+    
+                if (size + 10 <= 420) {
+                    size += 10;
+                } else {
+                    size = 200;
+                }
+    
+                $(this).css({
+                    'width': size + 'px',
+                    'height': size + 'px'
+                });
+            });
+    
+            $('#balloon').mouseleave(function() {
+                startShrink();
+            });
+    
+            $('#balloon').mouseover(function() {
+                clearInterval(shrink);
+            });
+    
+            function startShrink() {
+                shrink = setInterval(() => {
+                    if (size - 5 >= 200) {
+                        i = (i - 1 + ball_color.length) % ball_color.length;
+                        $('#balloon').css('background-color', ball_color[i]);
+                        size -= 5;
+                    } else {
+                        size = 200;
+                    }
+    
+                    $('#balloon').css({
+                        'width': size + 'px',
+                        'height': size + 'px'
+                    });
+                }, 250);
+            }
+
+            startShrink();
+        });
+    </script>
+</body>
+</html>
