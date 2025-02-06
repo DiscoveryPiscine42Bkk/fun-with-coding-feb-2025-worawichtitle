@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0px;
+            display: flex;
+            justify-content: center;
+            font-size: 2rem;
+        }
+        .box {
+            width: 80%;
+        }
+        #ft_list {
+            background-color: antiquewhite;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+        button {
+            margin: 20px;
+            padding: 10px 20px;
+            font-size: 1.5rem;
+            border-radius: 5px;
+        }
+        h1 {
+            margin-bottom: 0px;
+        }
+        .todo {
+            width: 100%;
+            background-color: whitesmoke;
+            margin-bottom: 20px;
+            text-align: center;
+            padding: 20px 0px;
+        }
+    </style>
+    <title>c03-ex03_todo</title>
+</head>
+<body>
+    <div class="box">
+        <h1>TO DO LIST</h1>
+        <button onclick="newTodo()">New</button>
+        <div id="ft_list"></div>
+    </div>
+    <script src="todo.js"></script>
+</body>
+</html>
