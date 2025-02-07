@@ -1,0 +1,195 @@
+body {
+    background-color: black;
+}
+
+.first {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    row-gap: auto;
+    background-color: grey;
+}
+
+#about {
+    background-color: grey;
+    max-height: 500px;
+    margin-right: 20px;
+}
+
+#text1_h3 {
+    margin-left: 20px;
+    font-size: 40px;
+    color: blanchedalmond;
+}
+#text1_p {
+    margin-left: 20px;
+    font-size: 30px;
+    color: whitesmoke;
+}
+
+.picture{
+    background-color: grey;
+    align-items: center;
+    max-height: 500px;
+}
+
+#Me {
+    margin-left: 150px;
+    margin-top: 30px;
+    height: 400px;
+    width: 300px;
+}
+
+#text1_h1 {
+    margin-left: 150px;
+    text-align: center;
+    color: blanchedalmond;
+}
+
+#text2 {
+    text-align: center;
+    padding: auto;
+    margin-top: 20px;
+    font-size: 40px;
+    color: darkslateblue;
+}
+
+#text2_h4 {
+    font-size: 30px;
+    color: whitesmoke;
+}
+
+#pro {
+    font-size: 24px;
+    color: aliceblue;
+}
+
+section {
+    background-color: darkgray;
+}
+
+#flex{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    gap: 10px;
+}
+
+#card {
+    border: solid 3px darkgray;
+    width: 100px;
+    height: 300px;
+    margin: auto;
+    text-align: center;
+    background-color: lightslategray;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: left;
+}
+button, #link2 {
+    background-color: whitesmoke;
+    color: darkcyan;
+    font-size: 18px;
+}
+#flex2 {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+#card2 {
+    display: flex;
+    border: solid 3px darkgray;
+    width: 125px;
+    height: 50px;
+    margin: auto;
+    text-align: center;
+    background-color: darkcyan;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+#skill {
+    margin-left: auto;
+    width: 50px;
+    height: 50px;
+}
+
+p {
+    color: wheat;
+    font-size: 18px;
+}
+
+.third {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    row-gap: auto;
+    text-align: center;
+}
+
+footer {
+    background-color: gray;
+}
+
+#card3 {
+    display: flex;
+    border: solid 2px ;
+    width: 200px;
+    height: 70px;
+    margin: auto;
+    background-color: darkturquoise;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+#background3 {
+    width: 400px;
+    background-color: grey;
+}
+
+#contact {
+    margin-left: auto;
+    width: 50px;
+    height: 50px;
+}
+
+#text3_h{
+    color: aliceblue;
+    font-size: 40px;
+}
+
+#text3_p{
+    color: white;
+    font-size: 32px;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    background: rgba(6, 4, 4, 0.5);
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    z-index: 10;
+}
+
+.navbar a {
+    color: #eee7e7;
+    margin: 5px 30px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.navbar a:hover {
+    color: goldenrod;
+    border-left: 3px solid;
+    padding-left: 5px;
+}
