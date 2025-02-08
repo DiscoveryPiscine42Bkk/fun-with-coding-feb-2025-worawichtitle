@@ -49,7 +49,18 @@
             });
     
             $('#balloon').mouseleave(function() {
-                startShrink();
+                if (size - 5 >= 200) {
+                        i = (i - 1 + ball_color.length) % ball_color.length;
+                        $('#balloon').css('background-color', ball_color[i]);
+                        size -= 5;
+                    } else {
+                        size = 200;
+                    }
+    
+                    $('#balloon').css({
+                        'width': size + 'px',
+                        'height': size + 'px'
+                    });
             });
     
             $('#balloon').mouseover(function() {
